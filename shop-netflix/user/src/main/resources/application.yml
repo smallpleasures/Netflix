@@ -1,0 +1,13 @@
+spring:
+  application:
+    name: user
+server:
+  port: 9201
+logging:
+  config: classpath:logback.xml
+eureka:
+  instance:
+    prefer-ip-address: true
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka
