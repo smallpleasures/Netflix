@@ -1,0 +1,28 @@
+spring:
+  application:
+    name: eureka-cluster
+  security:
+    user:
+      name: user
+      password: 123456
+server:
+  port: 18761
+eureka:
+  instance:
+    hostname: eureka-1
+  #设置服务注册中心地址，指向另一个注册中心
+  client:
+    serviceUrl:
+#      defaultZone: http://user:123456@eureka-2:1002/eureka/,http://user:123456@eureka-2:1003/eureka/
+      defaultZone: http://user:123456@localhost:18762/eureka/,http://user:123456@localhost:18763/eureka/
+#  server:
+#    #关闭自我保护:true 为开启自我保护，false 为关闭自我保护
+#    enable-self-preservation: false
+#    #清理间隔(单位:毫秒，默认是 60*1000)
+#    eviction-interval-timer-in-ms: 2000
+logging:
+  config: classpath:logback.xml
+
+
+
+
